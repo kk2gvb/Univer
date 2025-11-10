@@ -1,0 +1,52 @@
+/* Панк-рок стиль */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #111; color: #fff; font-family: 'Courier New', monospace; line-height: 1.6; }
+a { color: #f00; text-decoration: none; font-weight: bold; }
+a:hover { text-decoration: underline; }
+
+header, footer { background: #000; padding: 1rem; text-align: center; }
+.logo { width: 80px; height: auto; }
+.nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.nav ul li a { font-size: 1.1rem; }
+
+main { padding: 2rem; text-align: center; }
+h1, h2 { color: #f00; font-family: 'Bangers', cursive; } /* Добавь Google Fonts в HTML если хочешь */
+
+.slider { position: relative; max-width: 800px; margin: 2rem auto; overflow: hidden; }
+.slider img { width: 100%; display: block; border: 3px solid #f00; }
+.slider-counter { font-weight: bold; margin-bottom: 1rem; }
+
+.order-ticket, .btn { background: #f00; color: #fff; border: none; padding: 1rem 2rem; font-size: 1.2rem; cursor: pointer; border-radius: 5px; }
+.order-ticket:hover, .btn:hover { background: #c00; transform: scale(1.05); transition: 0.3s; }
+
+/* Модалка */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); overflow: auto; }
+.modal-content { background: #222; margin: 10% auto; padding: 2rem; width: 90%; max-width: 400px; border: 3px solid #f00; position: relative; }
+.close { position: absolute; top: 10px; right: 20px; font-size: 2rem; cursor: pointer; color: #fff; }
+
+/* Бургер */
+.burger { display: none; font-size: 2rem; cursor: pointer; color: #f00; }
+
+/* Галерея */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.gallery img { width: 100%; border: 2px solid #f00; cursor: zoom-in; }
+
+/* Лайтбокс */
+.lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; flex-direction: column; }
+.lightbox.active { display: flex; }
+.lb-img { max-width: 90%; max-height: 70vh; }
+.lb-prev, .lb-next { position: absolute; top: 50%; background: rgba(255,0,0,0.7); color: #fff; border: none; padding: 1rem; font-size: 2rem; cursor: pointer; }
+.lb-prev { left: 20px; }
+.lb-next { right: 20px; }
+.lb-close { position: absolute; top: 20px; right: 20px; font-size: 2.5rem; cursor: pointer; color: #f00; }
+
+/* Кнопка вверх */
+.to-top { position: fixed; bottom: 30px; right: 30px; background: #f00; color: #fff; width: 50px; height: 50px; font-size: 1.5rem; border: none; border-radius: 50%; cursor: pointer; display: none; }
+
+/* Мобилька */
+@media (max-width: 768px) {
+    .nav ul { display: none; flex-direction: column; background: #000; position: absolute; top: 70px; left: 0; width: 100%; padding: 1rem 0; }
+    .nav ul.active { display: flex; }
+    .burger { display: block; }
+    .slider img { height: 200px; object-fit: cover; }
+}
